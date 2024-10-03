@@ -1,0 +1,15 @@
+pipeline {
+  agent any
+  stages {
+  stage('git checkout') {
+   steps {
+    git 'https://github.com/Sushmaa123/maven-project.git'
+    }
+   }
+  stage('build') {
+   steps {
+   bat 'mvn clean install'
+   }
+  }
+ }
+ }
